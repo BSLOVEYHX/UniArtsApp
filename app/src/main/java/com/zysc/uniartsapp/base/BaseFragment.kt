@@ -17,9 +17,9 @@ import kotlin.reflect.KClass
  */
 abstract class BaseFragment<T : ViewModel, M : ViewDataBinding> : Fragment() {
 
-    lateinit var mViewModel: ViewModel
+    lateinit var mViewModel: T
 
-    lateinit var mDataBinding: ViewDataBinding
+    lateinit var mDataBinding: M
 
     override fun onCreateView(
         inflater: LayoutInflater,

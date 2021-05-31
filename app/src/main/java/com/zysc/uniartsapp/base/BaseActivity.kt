@@ -15,9 +15,9 @@ import kotlin.reflect.KClass
  */
 abstract class BaseActivity<T : ViewModel, M : ViewDataBinding> : AppCompatActivity() {
 
-    lateinit var mViewModel: ViewModel
+    lateinit var mViewModel: T
 
-    lateinit var mDataBinding: ViewDataBinding
+    lateinit var mDataBinding: M
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
