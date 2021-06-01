@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--没有选中的样式-->
+    <style name="bottom_normal_text">
+        <item name="android:textColor">@color/_606060</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!--选中的样式-->
+    <style name="bottom_selected_text">
+        <item name="android:textColor">@color/_101010</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+</resources>

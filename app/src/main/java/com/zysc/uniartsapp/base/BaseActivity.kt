@@ -2,10 +2,13 @@ package com.zysc.uniartsapp.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
+import com.zysc.utils.StatusBarKt
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import kotlin.reflect.KClass
 
@@ -17,12 +20,14 @@ abstract class BaseActivity<T : ViewModel, M : ViewDataBinding> : AppCompatActiv
 
     lateinit var mViewModel: T
 
-    lateinit var mDataBinding: M
+    lateinit var mViewBinding: M
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        StatusBarKt.fitSystemBar(this)
+        mViewBinding = DataBindingUtil.setContentView(this, getLayoutResId())
+
         initViewModel()
-        mDataBinding = DataBindingUtil.setContentView(this, getLayoutResId())
         initData()
         initView()
     }
