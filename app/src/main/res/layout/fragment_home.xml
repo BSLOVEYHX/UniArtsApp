@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/home_search_bar"
+            layout="@layout/layout_search_bar_home" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/home_search_bar"
+            android:layout_marginTop="10dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ns_scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:ignore="MissingClass">
+
+                    <com.zhouwei.mzbanner.MZBannerView
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        app:canLoop="true"
+                        app:indicatorAlign="center"
+                        app:middle_page_cover="false"
+                        app:open_mz_mode="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/bg_market_block"
+                        android:elevation="2dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="72dp"
+                            android:layout_height="50dp"
+                            android:background="@mipmap/bg_news"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@mipmap/icon_news_word" />
+
+                            <TextView
+                                android:id="@+id/currentTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/button_grant_bg"
+                                android:paddingLeft="2dp"
+                                android:paddingTop="1dp"
+                                android:paddingRight="2dp"
+                                android:paddingBottom="1dp"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <ViewFlipper
+                            android:id="@+id/notice_flipper"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="15dp"
+                            android:layout_weight="1"
+                            android:autoStart="true"
+                            android:flipInterval="3000"
+                            android:inAnimation="@anim/anim_come_in"
+                            android:outAnimation="@anim/anim_come_out" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rl_recommend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="2dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/title_hot"
+                            android:background="@color/_000000" />
+
+                        <TextView
+                            android:id="@+id/title_hot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="@string/hot_create"
+                            android:textColor="@color/_101010"
+                            android:textSize="19sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="2dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/title_hot"
+                            android:background="@color/_000000" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/hot_recycle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+
+</layout>

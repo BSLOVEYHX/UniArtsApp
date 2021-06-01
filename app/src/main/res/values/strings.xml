@@ -6,4 +6,8 @@
     <string name="tab_purchased_miner">创作者</string>
     <string name="tab_assets">盲盒</string>
     <string name="tab_mine">我的</string>
+
+    <!--HomeFragment-->
+    <string name="search_bar_hint">请输入关键字搜索作品</string>
+    <string name="hot_create">热门原创</string>
 </resources>
