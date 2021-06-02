@@ -23,7 +23,7 @@ class RetrofitClient private constructor() {
         retrofit = Retrofit.Builder()
             .client(initClient())
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://www.wanandroid.com")
+            .baseUrl("https://app.uniarts.me")
             .build()
 
     }

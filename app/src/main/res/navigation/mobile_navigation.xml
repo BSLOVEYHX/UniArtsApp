@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fixFragment
+        android:id="@+id/navigation_home"
+        android:name="com.zysc.uniartsapp.ui.HomeFragment"
+        android:label="@string/tab_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fixFragment
+        android:id="@+id/navigation_mart"
+        android:name="com.zysc.uniartsapp.ui.HomeFragment"
+        android:label="@string/tab_mart"
+        tools:layout="@layout/fragment_home" />
+
+    <fixFragment
+        android:id="@+id/navigation_box"
+        android:name="com.zysc.uniartsapp.ui.HomeFragment"
+        android:label="@string/tab_box"
+        tools:layout="@layout/fragment_home" />
+
+    <fixFragment
+        android:id="@+id/navigation_creator"
+        android:name="com.zysc.uniartsapp.ui.HomeFragment"
+        android:label="@string/tab_creator"
+        tools:layout="@layout/fragment_home" />
+
+    <fixFragment
+        android:id="@+id/navigation_mine"
+        android:name="com.zysc.uniartsapp.ui.HomeFragment"
+        android:label="@string/tab_mine"
+        tools:layout="@layout/fragment_home" />
+
+
+</navigation>

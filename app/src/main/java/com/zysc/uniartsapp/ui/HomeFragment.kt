@@ -1,5 +1,7 @@
 package com.zysc.uniartsapp.ui
 
+import android.util.Log
+import androidx.lifecycle.Observer
 import com.zysc.uniartsapp.R
 import com.zysc.uniartsapp.base.BaseFragment
 import com.zysc.uniartsapp.databinding.FragmentHomeBinding
@@ -14,10 +16,11 @@ class HomeFragment : BaseFragment<HomeFragViewModel, FragmentHomeBinding>() {
     override fun getLayoutResId() = R.layout.fragment_home
 
     override fun initData() {
-        TODO("Not yet implemented")
+        mViewModel.apply { getBanner() }
+        mViewModel.getBannerLiveData().observe(viewLifecycleOwner, Observer {
+        })
     }
 
     override fun initView() {
-        TODO("Not yet implemented")
     }
 }

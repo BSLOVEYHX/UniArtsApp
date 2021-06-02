@@ -3,6 +3,7 @@ package com.zysc.uniartsapp.network.net
 import com.zysc.uniartsapp.network.exception.DealException
 import com.zysc.uniartsapp.network.exception.ResultException
 import com.zysc.uniartsapp.network.model.BaseModel
+import com.zysc.uniartsapp.network.model.BaseResponse
 import com.zysc.uniartsapp.network.model.NetResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
@@ -23,22 +24,22 @@ open class BaseRepository {
     }
 
     suspend fun <T : Any> handleResponse(
-        response: BaseModel<T>,
+        response: BaseResponse<T>,
         successBlock: (suspend CoroutineScope.() -> Unit)? = null,
         errorBlock: (suspend CoroutineScope.() -> Unit)? = null
     ): NetResult<T> {
         return coroutineScope {
-            if (response.errorCode == -1) {
+            if (response.head.code == -1) {
                 errorBlock?.let { it() }
                 NetResult.Error(
                     ResultException(
-                        response.errorCode.toString(),
-                        response.errorMsg
+                        response.head.code.toString(),
+                        response.head.msg
                     )
                 )
             } else {
                 successBlock?.let { it() }
-                NetResult.Success(response.data)
+                NetResult.Success(response.body)
             }
         }
     }

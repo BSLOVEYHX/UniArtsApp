@@ -2,9 +2,9 @@
     <string name="app_name">UniArtsApp</string>
     <!--MainActivity-->
     <string name="tab_home">首页</string>
-    <string name="tab_mall">市场</string>
-    <string name="tab_purchased_miner">创作者</string>
-    <string name="tab_assets">盲盒</string>
+    <string name="tab_mart">市场</string>
+    <string name="tab_creator">创作者</string>
+    <string name="tab_box">盲盒</string>
     <string name="tab_mine">我的</string>
 
     <!--HomeFragment-->

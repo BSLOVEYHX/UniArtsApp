@@ -2,6 +2,7 @@ package com.zysc.uniartsapp.base
 
 import android.app.Application
 import com.zysc.uniartsapp.di.allModule
+import com.zysc.utils.BaseContext
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -13,7 +14,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        BaseContext.instance.init(this)
         startKoin {
             androidContext(this@App)
             modules(allModule)

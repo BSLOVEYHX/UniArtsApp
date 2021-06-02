@@ -9,18 +9,18 @@
     <item
         android:id="@+id/navigation_mart"
         android:icon="@drawable/icon_mart_selector"
-        android:title="@string/tab_mall" />
+        android:title="@string/tab_mart" />
 
 
     <item
-        android:id="@+id/navigation_boxes"
+        android:id="@+id/navigation_box"
         android:icon="@drawable/icon_assets_selector"
-        android:title="@string/tab_assets" />
+        android:title="@string/tab_box" />
 
     <item
         android:id="@+id/navigation_creator"
         android:icon="@drawable/icon_creator_selector"
-        android:title="@string/tab_purchased_miner" />
+        android:title="@string/tab_creator" />
     <item
         android:id="@+id/navigation_mine"
         android:icon="@drawable/icon_mine_selector"

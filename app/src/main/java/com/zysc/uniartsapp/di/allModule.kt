@@ -22,5 +22,5 @@ val otherModule = module {
 
 
 val allModule = listOf(
-    otherModule, treeViewModelModule
+    otherModule, treeViewModelModule, treeRepoModule
 )
