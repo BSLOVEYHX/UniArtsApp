@@ -12,6 +12,7 @@ import retrofit2.http.Query
  */
 interface ApiService {
 
+    //首页Banner
     @GET("/api/v2/banners")
     suspend fun getBanner(@Query("platform") platform: Int): BaseResponse<MutableList<Banners>>
 }

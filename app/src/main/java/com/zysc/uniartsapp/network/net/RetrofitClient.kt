@@ -1,7 +1,6 @@
 package com.zysc.uniartsapp.network.net
 
-import androidx.databinding.library.BuildConfig
-import com.zysc.uniartsapp.network.interceptor.CommonInterceptor
+import com.zysc.uniartsapp.network.interceptor.LoggingInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -23,7 +22,7 @@ class RetrofitClient private constructor() {
         retrofit = Retrofit.Builder()
             .client(initClient())
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://app.uniarts.me")
+            .baseUrl("https://uniarts.senmeo.tech")
             .build()
 
     }
@@ -32,7 +31,7 @@ class RetrofitClient private constructor() {
 
         return OkHttpClient.Builder()
             .addInterceptor(initLogInterceptor())
-            .addInterceptor(CommonInterceptor())
+            .addInterceptor(LoggingInterceptor())
             .connectTimeout(10, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
             .build()
@@ -40,11 +39,12 @@ class RetrofitClient private constructor() {
 
     private fun initLogInterceptor(): HttpLoggingInterceptor {
         val loggingInterceptor = HttpLoggingInterceptor()
-        if (BuildConfig.DEBUG) {
-            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        } else {
-            loggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
-        }
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+//        if (BuildConfig.DEBUG) {
+//            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+//        } else {
+//            loggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
+//        }
         return loggingInterceptor
     }
 
