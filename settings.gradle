@@ -1,2 +1,3 @@
 rootProject.name = "UniArtsApp"
-include ':app'
+include(":app")
+include(":lib_ui",":lib_base",":lib_common")

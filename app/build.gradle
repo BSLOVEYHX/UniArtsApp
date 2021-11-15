@@ -55,4 +55,15 @@ dependencies {
 
     // Koin AndroidX Fragment Factory (unstable version)
     implementation "org.koin:koin-androidx-fragment:$koin_version"
+
+    // 依赖 base 库
+    implementation project(":lib_ui")
+
+    // 状态栏工具
+    implementation "com.gyf.immersionbar:immersionbar:3.0.0"
+    implementation "com.gyf.immersionbar:immersionbar-ktx:3.0.0"
+
+    //ARouter 路由
+    implementation "com.alibaba:arouter-api:1.5.1"
+    implementation "com.alibaba:arouter-compiler:1.5.1"
 }

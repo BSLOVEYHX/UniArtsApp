@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+group = "com.github.WangJie0822"
+
+dependencies {
+    // kotlin
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.21")
+
+    // 测试
+    testImplementation("junit:junit:4.13")
+}

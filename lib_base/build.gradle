@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+group = "com.github.WangJie0822"
+
+android {
+
+    // 编译 SDK 版本
+    compileSdkVersion 29
+
+    // 资源前缀
+    resourcePrefix("base")
+
+    defaultConfig {
+        // 最低支持版本
+        minSdkVersion 21
+        // 目标 SDK 版本
+        targetSdkVersion 29
+    }
+
+    // 源文件路径设置
+    sourceSets {
+        main {
+            java.srcDirs("src/main/java", "src/main/kotlin")
+            jni.srcDirs("libs", "jniLibs")
+        }
+    }
+
+    buildFeatures {
+        // DataBinding 开启
+        dataBinding = true
+    }
+
+    // Java 版本配置
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // Kotlin 支持
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.21")
+    // 协程
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0")
+
+    // v4
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    // v7
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    // RecyclerView
+    implementation("androidx.recyclerview:recyclerview:1.1.0")
+
+    // Common 库
+//    api("com.github.WangJie0822.SampleProject:lib_common:0.0.1")
+    api(project(":lib_common"))
+}
