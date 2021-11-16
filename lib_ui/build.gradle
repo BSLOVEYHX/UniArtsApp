@@ -56,5 +56,5 @@ dependencies {
 
     // Common 库
 //    api("com.github.WangJie0822.SampleProject:lib_base:1.0.1")
-    implementation(project(":lib_base"))
+    api project(":lib_base")
 }

@@ -1,5 +1,6 @@
 plugins {
-    id 'java-library'
+    id ("java-library")
+    kotlin("jvm")
 }
 
 group = "com.github.WangJie0822"
@@ -10,4 +11,9 @@ dependencies {
 
     // 测试
     testImplementation("junit:junit:4.13")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
