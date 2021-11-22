@@ -1,19 +1,12 @@
 package com.zysc.uniartsapp.base
 
+//import com.alibaba.android.arouter.launcher.ARouter
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.LayoutInflater
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
-import com.alibaba.android.arouter.launcher.ARouter
 import com.gyf.immersionbar.ImmersionBar
 import com.gyf.immersionbar.ktx.immersionBar
 import com.wj.android.ui.activity.BaseBindingLibActivity
 import com.zysc.uniartsapp.R
-import org.koin.androidx.viewmodel.ext.android.getViewModel
-import kotlin.reflect.KClass
 
 /**
  *@Date:2021/5/31
@@ -50,7 +43,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
     private fun observeData() {
         // 界面跳转
         viewModel.uiNavigationData.observe(this, { path ->
-            ARouter.getInstance().build(path).navigation(mContext)
+//            ARouter.getInstance().build(path).navigation(mContext)
         })
     }
 }

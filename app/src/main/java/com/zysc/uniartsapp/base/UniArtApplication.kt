@@ -19,7 +19,7 @@ class UniArtApplication : Application() {
         super.onCreate()
 
         startKoin {
-            androidLogger(Level.DEBUG)
+            androidLogger(Level.NONE)
             androidContext(this@UniArtApplication)
             modules(listOf(netModule, repositoryModule, viewModelModule))
         }
